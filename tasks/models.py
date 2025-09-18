@@ -2,12 +2,14 @@
 from django.db import models
 
 class Category(models.Model):
+	"""Model representing a task category."""
 	name = models.CharField(max_length=100, unique=True)
 
 	def __str__(self):
 		return self.name
 
 class Task(models.Model):
+	"""Model representing a task."""
 	title = models.CharField(max_length=200)
 	due_date = models.DateField()
 	completed = models.BooleanField(default=False)
