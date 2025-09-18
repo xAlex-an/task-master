@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+body {
+    font-family: 'Inria Sans', sans-serif;
+    font-size: 16px;
+    color: #333;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.action-icon {
+    cursor: pointer;
+    transition: color ease-in-out 0.3s;
+    font-size: 18px;
+    padding-left: 5px;
+}
+
+.checkbox-btn {
+    color: #fff !important;
+    background-color: rgb(41, 150, 41);
+}
+
+.checkbox-btn:hover {
+    color: #fff !important;
+    background-color: rgb(0, 93, 0);
+}
+
+.delete-btn {
+    color: #fff !important;
+    background-color: rgb(150, 41, 41);
+}
+
+.delete-btn:hover {
+    color: #fff !important;
+    background-color: rgb(93, 0, 0);
+}
+
+#add-task-btn {
+    margin-top: 31px;
+}
+
+/* Modern table styles */
+table {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.18);
+    margin-bottom: 32px;
+    transition: box-shadow 0.3s;
+}
+
+th {
+    background: linear-gradient(90deg, #e3e6ec 0%, #f3f6fa 100%);
+    font-weight: 700;
+    color: #222;
+    border-bottom: 2px solid #e3e6ec;
+    padding: 16px 14px;
+    text-align: left;
+    letter-spacing: 0.5px;
+    font-size: 1.1rem;
+}
+
+td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e3e6ec;
+    vertical-align: middle;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.95);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background: linear-gradient(90deg, #e3e6ec 0%, #f7fbff 100%);
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(31, 38, 135, 0.08);
+}
+
+.table-bordered {
+    border: none;
+}
+
+.table thead th {
+    border-top: none;
+}
+
+.action-icon {
+    margin: 0 6px;
+    font-size: 22px;
+    opacity: 0.85;
+    border-radius: 6px;
+    padding: 6px;
+    background: rgba(243,246,250,0.6);
+    box-shadow: 0 1px 4px rgba(31,38,135,0.07);
+    transition: all 0.2s;
+}
+.action-icon:hover {
+    opacity: 1;
+    transform: scale(1.18) rotate(-4deg);
+    background: linear-gradient(90deg, #e3e6ec 0%, #f7fbff 100%);
+    box-shadow: 0 2px 8px rgba(31,38,135,0.12);
+}
+}
