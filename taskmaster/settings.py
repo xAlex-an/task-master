@@ -1,5 +1,5 @@
 import dj_database_url
-from env import SECRET_KEY, DATABASE_URL
+import os
 """
 Django settings for taskmaster project.
 
@@ -12,13 +12,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
-import os
 from pathlib import Path
-from env import SECRET_KEY
 
-env_path = os.path.join(os.path.dirname(__name__), 'env.py')
-if os.path.exists(env_path):
-    import env
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,11 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 
+# SECURITY WARNING: keep the secret key used in production secret!
+# Now loaded from environment variable
 
 # SECURITY WARNING: don't run with debug turned on in production!
-
 DEBUG = False
 ALLOWED_HOSTS = [os.environ.get('HEROKU_APP_HOST', '127.0.0.1')]
 
@@ -88,6 +84,8 @@ WSGI_APPLICATION = 'taskmaster.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
+DATABASE_URL = os.environ.get('DATABASE_URL')
 DATABASES = {
     'default': dj_database_url.parse(DATABASE_URL)
 }
@@ -135,8 +133,9 @@ STATICFILES_DIRS = [
 ]
 
 
+
 # Use SECRET_KEY from environment variable for Heroku
-SECRET_KEY = os.environ.get('SECRET_KEY', SECRET_KEY)
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
